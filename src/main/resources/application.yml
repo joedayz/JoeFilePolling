@@ -1,0 +1,30 @@
+inbound:
+    failed:
+        path:  /Users/josediaz/Downloads/failed
+    file:
+        poller:
+            fixed:
+                delay: 1000
+            max:
+                messages:
+                    per:
+                        poll: 5
+            thread:
+                pool:
+                    size: 4
+    cabecera:
+        regex: \d{1,6}_(?i)(\w+Cabecera)_\d{1,6}.txt
+    detalle:
+        regex: \d{1,6}_(?i)(\w+Detalle)_\d{1,6}.txt
+    leyenda:
+        regex: \d{1,6}_(?i)(\w+Leyenda)_\d{1,6}.txt                
+    out:
+        path: /Users/josediaz/Downloads/out
+    processed:
+        path: /Users/josediaz/Downloads/processed
+    read:
+        path: /Users/josediaz/Downloads/read
+out:
+    filename:
+        dateFormat: yyyy_MM_dd_HH_mm_ss_SSS
+        suffix: .txt
